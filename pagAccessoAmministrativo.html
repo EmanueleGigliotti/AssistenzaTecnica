@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>PAGINA GESTIONE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+#divTitolo {
+    background-color: #161814;
+    text-align: left;
+    left: 200px;
+    width: 320px; 
+    border-radius: 10px;
+    box-shadow: 3px 7px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#containerFormDati {
+    padding: 25px;
+    border: solid;
+    border-color:#151614; ;
+}
+#divLaTuaPrenotazione {
+    border: solid;
+    border-color: #121311;;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+.logo {
+    width: 70px;
+}
+#divHeader {
+    background-color: #0a0c08;
+}
+#divNav{
+    background-color: #0f1b05;
+}
+#nav {
+    padding-top: 0;
+}
+    </style>
+</head>
+<header>
+    <nav class="navbar navbar-dark bg-dark expand-lg">
+        <div class="container-fluid">
+        <p id="logo"><img src="./imgs/logo.png" alt="logo" style="width: 100px; height: auto;"></p>
+          <a class="navbar-brand" href="index.html">Riparatech</a>
+          <div class="dropdown">
+            <a class="navbar-brand" href="index.html">home</a>
+          </div>
+        </div>
+      </nav>
+  </header>
+<body>
+    <h2 style="text-align: center;"><u>DATI CLIENTI</u></h2>
+    <button style="background-color: #9bae87;" id="saveButton">SALVA CLIENTE SU FILE</button>
+    <input type="file" id="fileInput">
+    <pre id="fileContents"></pre>
+
+    <div class="container mt-4"> 
+        <div id="containerFormDati">
+            <form>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" required />
+            </div>
+            <div class="form-group">
+                <label for="cognome">Cognome:</label>
+                <input type="text" class="form-control" id="cognome" required />
+            </div>
+            <div class="form-group" style="width: 200px;">
+                <label for="data">DATA CONSEGNA</label> 
+                <input type="date" class="form-control" id="dataConsegna" required /> 
+            </div>
+            <div class="form-group">
+                <label for="nTelefono">Numero Telefono:</label>
+                <input type="text" class="form-control" id="nTelefono" required />
+            </div>
+            <div class="form-group">
+                <label for="numeroSerie">Numero di serie:</label>
+                <input type="number" class="form-control" id="numeroSerie" required />
+            </div>
+            <div class="form-group">
+                <label for="text"><b>Descrivi problema</b></label>
+                <input type="text" class="form-control"id="descrizioneP"required><br>
+            </div>
+            <br>
+            <br>
+                <button type="button" style="background-color: #9bae87;" onclick="aggiungiCliente()">AGGIUNGI CLIENTE</button><br>   
+            </form>
+        </div>
+        <button style="background-color: #9bae87;" onclick="stampaLista()">Visualizza lista clienti</button>
+        <button type="button" style="background-color: #9bae87;" onclick="cercaPerNome()">Cerca cliente per nome</button> 
+        <p id="ricercaPerNome"></p>
+        <p id="stampaLista"></p>
+        <script>
+            var nomeAccesso="gianluca";
+            var passwordGiusta="pippo";
+            var passwordInserita;
+            var nomeInserito;
+            do{
+              nomeInserito=prompt("inserisci nome operatore:");
+              passwordInserita=prompt("inserisci password:");
+              if(nomeInserito!=nomeAccesso||passwordInserita!=passwordGiusta){
+                  alert("password o nome errati");
+              }
+              
+            }while(nomeInserito!=nomeAccesso||passwordInserita!=passwordGiusta);
+           
+           
+          
+            
+  
+            
+  
+          var listaClienti = [];//array lista clienti
+  
+          function aggiungiCliente(){
+           var nomeClienteI=document.getElementById("nome").value;
+           var cognomeClienteI=document.getElementById("cognome").value;
+           var dataConsegnaI=document.getElementById("dataConsegna").value;
+           var numeroTelefonoI=document.getElementById("nTelefono").value;
+           var numeroSerieI=parseInt(document.getElementById("numeroSerie").value);
+           var descrizioneI=document.getElementById("descrizioneP").value;
+           //fine recupero variabili
+           //creazione oggetto cliente
+          var cliente={
+              nomeCliente:"",
+              cognomeCliente:"",
+              dataConsegna:"",
+              numeroTelefono:"",
+              numeroSerie:"",
+              descrizione:""
+          };
+          //fine creazione oggetto 
+          //assegnazione valori ad oggetto
+          cliente.nomeCliente=nomeClienteI;
+          cliente.cognomeCliente=cognomeClienteI;
+          cliente.dataConsegna=dataConsegnaI;
+          cliente.numeroTelefono=numeroTelefonoI;
+          cliente.numeroSerie=numeroSerieI;
+          cliente.descrizione=descrizioneI;
+          //fine assegnazione valori
+          //inserire oggetti nell'array
+          listaClienti.push(cliente);
+          //fine arr
+          //pulizia campi
+          document.getElementById("nome").value="";
+          document.getElementById("cognome").value="";
+          document.getElementById("dataConsegna").value="";
+          document.getElementById("nTelefono").value="";
+          document.getElementById("numeroSerie").value="";
+          document.getElementById("descrizioneP").value="";
+          //fine pulizia campi
+          }//function aggiungi cliente
+  
+          function stampaLista(){
+              var stampa=document.getElementById("stampaLista");
+              stampa.innerHTML="";
+              for(var i=0;i<listaClienti.length;i++){
+                stampa.innerHTML+="<br>"+"NOME CLIENTE: "+listaClienti[i].nomeCliente+"<br> "+"COGNOME: "+listaClienti[i].cognomeCliente+"<br>"+
+                "DATA PRESA CONSEGNA: "+listaClienti[i].dataConsegna+"<br>"+"NUMERO TELEFONO: "+listaClienti[i].numeroTelefono+"<br>"+
+                "NUMERO SERIE: "+listaClienti[i].numeroSerie+"<br>"+"DESCRIZIONE PROBLEMA: "+listaClienti[i].descrizione;
+              }//fine for
+          }//fine funzione stampa
+  
+          function cercaPerNome(){
+              var nomeCercato="";
+              var stampa=document.getElementById("ricercaPerNome");
+              stampa.innerHTML="";
+              nomeCercato=prompt("inserisci nome da cercare");
+              for(var i=0;i<listaClienti.length;i++){
+                  if(listaClienti[i].nomeCliente===nomeCercato){
+                         stampa.innerHTML+=listaClienti[i].nomeCliente+" "+":"+"DATA PRESA CONSEGNA: "+listaClienti[i].dataConsegna+"<br>"+
+                         "DESCRIZIONE PROBLEMA: "+listaClienti[i].descrizione+"<br>"+
+                         "NUMERO SERIE: "+listaClienti[i].numeroSerie+"<br>"+
+                         "NUMERO TELEFONO: "+listaClienti[i].numeroTelefono
+                  }//fine if
+              }//fine for
+          }//fine funzione ricerca
+
+
+
+
+
+               saveButton.addEventListener('click',function(){
+               var nomeCliente=prompt("inserisci nome cliente da salvare su file");
+               var cognomeCliente=prompt("inserisci cognome cliente: ");
+               var numeroTelefono=prompt("inserisci numero telefono:");
+               var  numeroDicodice=prompt("inserisci numero serie o nome dispositvo:");
+               var descrizione=prompt("inserisci descrizione problema");//funzione salvataggio su file
+               var data=prompt("inserisci data");
+               var textToSave="NOME CLIENTE: "+nomeCliente+" "+"COGNOME: "+cognomeCliente+" "+"NUMERO TELEFONO: "+numeroTelefono+" "+"NUMERO SERIE O NOME DISPOSITIVO: "+numeroDicodice+" "+"DESCRIZIONE PROBLEMA: "+descrizione+" "+"DATA: "+data;
+               const blob=new Blob([textToSave], {type:'text/plain'});
+               const a=document.createElement('a');
+               a.href=URL.createObjectURL(blob);
+               a.download=nomeCliente;
+               a.click();
+          });//fine funzione
+
+          const fileInput=document.getElementById("fileInput");
+          const fileContents=document.getElementById("fileContents");
+          fileInput.addEventListener('change',function(){
+          const file=fileInput.files[0];//funzione apertura file
+          const reader=new FileReader();
+          reader.onload=function(e){
+          fileContents.textContent=e.target.result
+            };
+          reader.readAsText(file);
+  });
+   </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto Assistenza Tecnica </title>
+    <meta neame=" description" content="Il nostro sito parla di assistenza tecnica">
+    <meta name="keywords" content="computer, informatica, software">
+    <meta name="autor" content="Classe di bitcamp gruppo 2">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="it">
+    <meta name="generator" content="Visual Studio Code">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+    <link rel="stylesheet" href="../css/stile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<body>
+    <header>
+      <style>
+        .center-content {
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  .login {
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    padding: 5%;
+    width: 30%;
+    background-color: white;
+    border-radius: 20px;
+    background-color: #72c5eb8d;
+  }
+
+  .carousel.slide{
+    max-width: 80%;
+    height: 60%;
+    display: flex;
+    margin: auto;
+    padding: 0px;
+    margin-top: 10px;
+    border:solid #212529;
+    box-shadow: 10px;
+    border-radius: 10px;
+  }
+
+  .carousel.slide.animate__animated.animate__zoomIn{
+    animation-duration: 2s;
+  }
+  #chiSiamoItaliano{
+    display: flex;
+    justify-content: center;
+    background-color: #212529;
+    color: white;
+    margin: 10px;
+    border-radius: 6px;
+    font-style: oblique;
+  }
+  .main-content{
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.4);
+    margin: 5em auto;
+    display: flex;
+  }
+  .company__info{
+    background-color: #00808038;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+  .fa-android{
+    font-size:3em;
+  }
+  @media screen and (max-width: 640px) {
+    .main-content{width: 90%;}
+    .company__info{
+      display: none;
+    }
+    .login_form{
+      border-top-left-radius:20px;
+      border-bottom-left-radius:20px;
+    }
+  }
+  @media screen and (min-width: 642px) and (max-width:800px){
+    .main-content{width: 70%;}
+  }
+  .row > h2{
+    color:#72c5eb8d;
+  }
+  .login_form{
+    background-color: #fff;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+  }
+  form{
+    padding: 0 2em;
+  }
+  .form__input{
+    width: 100%;
+    border:0px solid transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #aaa;
+    padding: 1em .5em .5em;
+    padding-left: 2em;
+    outline:none;
+    margin:1.5em auto;
+    transition: all .5s ease;
+  }
+  .form__input:focus{
+    border-bottom-color: #72c5eb8d;
+    box-shadow: 0 0 5px rgba(0,80,80,.4); 
+    border-radius: 4px;
+  }
+  .btn{
+    transition: all .5s ease;
+    width: 70%;
+    border-radius: 30px;
+    color:#72c5ebe0;
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid #72c5eb8d;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+  .btn:hover, .btn:focus{
+    background-color: #72c5eb8d;
+    color:#fff;
+  }
+  #nomeLogin{
+    font-size: large;
+    font-size: 40px;
+    font-style: oblique;
+  }
+  #contenuto{
+    border-radius: 10px;
+    background-color: #72c5eb45;
+    color: #212529;
+  }
+  #serviziItaliano{
+    display: flex;
+    justify-content: center;
+    border: solid #212529;
+    background-color: #212529;
+    color: white;
+    margin: 10px;
+    border-radius: 6px;
+    font-style: oblique;
+  }
+  #contenutoServizi{
+    border-radius: 10px;
+    background-color: #72c5eb3e;
+    color: #212529;
+    
+  }
+  #tecnico{
+    display: inline;
+    
+  }
+
+  #immagineResponsiva{
+    max-width: 100%;
+    max-height: 500px;
+    display: flex;
+    margin: auto;
+    padding: 0px;
+    margin-top: 20px;
+    border:solid grey;
+    box-shadow: 10px;
+    border-radius: 10px;
+  }
+      </style>
+        <nav class="navbar navbar-dark bg-dark expand-lg">
+            <div class="container-fluid">
+            <p id="logo"><img src="../imgs/logo.png" alt="logo" style="width: 100px; height: auto;"></p>
+              <a class="navbar-brand" href="#">Riparatech</a>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lingua
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" id="it-language">IT</a></li>
+                  <li><a class="dropdown-item" href="#" id="en-language">EN</a></li>
+                </ul>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Login</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="utente.html">Login Utente</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="accessoAmministratore.html">Login Amministratore</a>
+                    </li>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+   
+    <main>
+      <!--Carosello immagingi -->
+      <div id="carouselExampleCaptions" class="carousel slide animate__animated animate__zoomIn">
+       <div class="carousel-indicators">
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+       </div>
+       <div class="carousel-inner">
+         <div class="carousel-item active">
+           <img src="../imgs/img1.jpeg" style="max-height:600px;" class="d-block w-100" alt="...">
+           <div class="carousel-caption d-none d-md-block">
+             <h5>Work safely</h5>
+           </div>
+         </div>
+         <div class="carousel-item">
+           <img src="../imgs/img2.jpeg" style="max-height:600px;" class="d-block w-100" alt="...">
+           <div class="carousel-caption d-none d-md-block">
+             <h5>Our way to team work</h5>
+           </div>
+         </div>
+         <div class="carousel-item">
+           <img src="../imgs/womenInTech.jpeg" style="max-height:600px;" class="d-block w-100" alt="...">
+           <div class="carousel-caption d-none d-md-block">
+             <h5>Women in tech</h5>
+           </div>
+         </div>
+       </div>
+       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+       </button>
+     </div> <br>
+     
+     <!-- Div  descrizione Chi siamo in Italiano -->
+     <div id="traduzione">
+      <div class="container" class="row">
+      <div class="testo1" style="width: 50%; height: 50%;"></div>
+      <h1 id="chiSiamoItaliano" style="text-align: center;">Chi siamo</h1>
+      <div class="col-md-8" ></div>
+      <p id="contenuto" style="float: left; width: 50%; height: 50%; padding-right: 5%;">Siamo il tuo partner affidabile nella gestione di un Centro di Assistenza Tecnica specializzato nell'ambito tech.
+        Con anni di esperienza nel settore, ci dedichiamo a fornire soluzioni tecniche di alta qualità per risolvere le tue 
+        esigenze informatiche e tecnologiche. <br>
+        Il nostro team esperto di tecnici altamente qualificati è appassionato di tecnologia e si impegna a garantire 
+       un servizio di assistenza tempestivo, professionale e personalizzato. Siamo qui per semplificare il mondo complesso 
+       della tecnologia, offrendo supporto tecnico, riparazioni e consulenza per garantire che tu possa sfruttare al massimo
+       il potenziale del tuo equipaggiamento e dei tuoi dispositivi.<br>
+       La tua soddisfazione è la nostra priorità, e ci impegniamo a offrire soluzioni su misura per le tue esigenze specifiche.
+       Con noi, puoi contare su un partner di fiducia per mantenere e migliorare le tue esperienze tecnologiche. </p> 
+       <div>
+       <img src="../imgs/responsiva.jpeg" class="img-fluid" alt="cavi" style="float: right; width: 50%; height: 50%; padding-left: 5%; border-radius: 15px;">
+      </div>
+      
+     </div>
+  
+
+    <!-- Div descrizione I nostri servizi -->
+    <div class="container">
+      <div id="traduzione" class="row">
+          <h3 id="serviziItaliano" style="text-align: center;">I nostri servizi</h3>
+          <div id="tecnico" class="col-md-4">
+              <img src="../imgs/tecnico.jpeg" alt="tecnico" class="img-fluid" style="border-radius: 10px;">
+          </div>
+          <div class="col-md-8">
+              <ul id="contenutoServizi">
+                  <li>Riparazioni Hardware e Software: Offriamo servizi di riparazione per hardware e software per una vasta gamma di dispositivi, tra cui computer, laptop, smartphone, tablet e altri dispositivi elettronici.</li>
+                  <li>Assistenza Remota: Forniamo assistenza tecnica remota per risolvere problemi software, configurazioni e aggiornamenti a distanza, risparmiando tempo e denaro ai nostri clienti.</li>
+                  <li>Installazione e Configurazione: Assistiamo i clienti nell'installazione e nella configurazione di nuovi software, sistemi operativi, reti wireless, stampanti e altri dispositivi.</li>
+                  <li>Contratti di Manutenzione: Forniamo contratti di manutenzione periodica per garantire che i dispositivi aziendali rimangano sempre in ottime condizioni di funzionamento.</li>
+                  <li>Supporto Tecnico Telefonico 24/7: Mettiamo a disposizione un servizio di supporto telefonico 24 ore su 24, 7 giorni su 7, per affrontare le emergenze tecnologiche in qualsiasi momento.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <br>
+<!-- Div azzurro-->
+<div style="display: block; width: 100%; height: 100px; background-color: #72c5eb51;"> </div>
+
+
+<br>
+  <!--Sezione immagini-testo x3-->
+
+  <div class="card-group">
+    <div class="card" style="margin: 3%;">
+      <img class="card-img-top" src="../imgs/hand-shake.jpeg" alt="Card image cap" >
+      <div class="card-body">
+        <p class="card-text">Offriamo consulenza tecnica per aiutare i clienti a prendere decisioni informate sull'acquisto di nuove attrezzature o sull'aggiornamento del software.</p>
+        <p class="card-text"><small class="text-muted">Prenota subito la tua consulenza</small></p>
+      </div>
+    </div>
+    
+    <div class="card" style="margin: 3%;">
+        <img class="card-img-top" src="../imgs/motherboard.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"> Forniamo componenti hardware e accessori tecnologici di alta qualità per l'acquisto, garantendo la compatibilità e la qualità.</p>
+          <p class="card-text"><small class="text-muted">Contattaci per maggiori informazioni.</small></p>
+        </div>
+       </div>  
+    <div class="card" style="margin: 3%;">
+        <img class="card-img-top" src="../imgs/meeting.jpeg" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">Organizziamo sessioni di formazione per aiutare i clienti a sfruttare al massimo le loro risorse tecnologiche e a migliorare le competenze informatiche.</p>
+        <p class="card-text"><small class="text-muted">Disponibili dal 1 dicembre 2023</small></p>
+      </div>
+    </div>
+  </div>
+  <br>
+     </main>
+    <script src="../JS/javaScript.js"></script>
+
+    <!-- Div azzurro-->
+<div style="display: block; width: 100%; height: 100px; background-color: #72c5eb51;"> </div>
+<br>
+
+    <!-- Google Maps-->
+    <div class="imgMaps">
+      <div style="display: flex; justify-content: center;">
+          <h3> Google Maps</h3>
+      </div>
+      <div style="display: flex; justify-content: center;"><a href="https://www.google.com/maps/place/Centro+direzionale,+Centro+Direzionale+Isola+E7,+80143+Napoli+NA/data=!4m2!3m1!1s0x133b081d2f1c270b:0x2ce1c818ea6f04?sa=X&ved=2ahUKEwiCysbTkqWCAxW0QfEDHSq7C_0Q8gF6BAhhEAA"> <img
+          src="../imgs/mapsImg.webp" alt="imgMaps"
+           style="max-width: 200px; max-height: 200px;"> </a></div>
+  </div>
+    <br>
+
+    <footer class="text-center text-center text-white bg-dark"  ismap="//www.google.com/maps/place/Centro+direzionale,+Centro+Direzionale+Isola+E7,+80143+Napoli+NA/data=!4m2!3m1!1s0x133b081d2f1c270b:0x2ce1c818ea6f04?sa=X&ved=2ahUKEwiHldTMiaWCAxV4VfEDHQPZBa8Q8gF6BAhhEAA">
+        <div class="container p-4 pb-0">
+            <section class="">
+                <div class="row">
+                    <hr class="w-100 clearfix d-md-none" />
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold" id="creatori">creatori</h6>
+                        <p>
+                            <a class="text-white">Selena Stella</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Emanuele Gigliotti</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Maria Maddaluno</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Asad Mustafa</a>
+                        </p>
+                        <p>
+                          <a class="text-white">Gianluca Radesca</a>
+                      </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold" id="contatti">Contatti</h6>
+                        <p><i class="fas fa-home mr-3"></i> Centro Direzionale (Na)</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@riparatech.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> Tel. 081 569 0000 </p>
+                        <p><i class="fas fa-print mr-3" id="cellulare"></i> Cellulare: 333 333 3333</p>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-3">
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <div class="p-3">
+                            © 2020 Copyright:
+                            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <script>
+      const traduzione = {
+    it: {
+        chiSiamoItaliano: "Chi siamo",
+        contenuto: "Siamo il tuo partner affidabile nella gestione di un Centro di Assistenza Tecnica specializzato nell'ambito tech. Con anni di esperienza nel settore, ci dedichiamo a fornire soluzioni tecniche di alta qualità per risolvere le tue esigenze informatiche e tecnologiche. Il nostro team esperto di tecnici altamente qualificati è appassionato di tecnologia e si impegna a garantire un servizio di assistenza tempestivo, professionale e personalizzato. Siamo qui per semplificare il mondo complesso della tecnologia, offrendo supporto tecnico, riparazioni e consulenza per garantire che tu possa sfruttare al massimo il potenziale del tuo equipaggiamento e dei tuoi dispositivi. La tua soddisfazione è la nostra priorità, e ci impegniamo a offrire soluzioni su misura per le tue esigenze specifiche. Con noi, puoi contare su un partner di fiducia per mantenere e migliorare le tue esperienze tecnologiche.",
+        serviziItaliano:"I nostri servizi",
+        contenutoServizi:"Riparazioni Hardware e Software: Offriamo servizi di riparazione per hardware e software per una vasta gamma di dispositivi, tra cui computer, laptop, smartphone, tablet e altri dispositivi elettronici.Assistenza Remota: Forniamo assistenza tecnica remota per risolvere problemi software, configurazioni e aggiornamenti a distanza, risparmiando tempo e denaro ai nostri clienti. Installazione e Configurazione: Assistiamo i clienti nell'installazione e nella configurazione di nuovi software, sistemi operativi, reti wireless, stampanti e altri dispositivi. Contratti di Manutenzione: Forniamo contratti di manutenzione periodica per garantire che i dispositivi aziendali rimangano sempre in ottime condizioni di funzionamento.Supporto Tecnico Telefonico 24/7: Mettiamo a disposizione un servizio di supporto telefonico 24 ore su 24, 7 giorni su 7, per affrontare le emergenze tecnologiche in qualsiasi momento."
+    },
+    en: {
+        chiSiamoItaliano: "Who we are",
+        contenuto: "We are your reliable partner in managing a Technical Assistance Center specialized in the tech sector. With years of experience in the sector, we are dedicated to providing high-quality technical solutions to solve your IT and technological needs. Our team expert of highly trained technicians are passionate about technology and are committed to timely, professional and personal service. We are here to simplify the complex world of technology, offering technical support, repairs and advice to ensure you get the most out of potential of your equipment and devices. Your satisfaction is our priority, and we are committed to offering solutions tailored to your specific needs. With us, you can count on a trusted partner to maintain and improve your technology experiences. ",
+        serviziItaliano:"Our services",
+        contenutoServizi:"Hardware and Software Repairs: We offer hardware and software repair services for a wide range of devices, including computers, laptops, smartphones, tablets and other electronic devices. Remote Assistance: We provide remote technical assistance to resolve software problems, configurations and remote upgrades, saving our customers time and money.Installation and Configuration: We assist customers in installing and configuring new software, operating systems, wireless networks, printers and other devices.Maintenance Contracts: We provide periodic maintenance contracts to ensure that company devices always remain in excellent working order. 24/7 Telephone Technical Support: We provide a 24/7 telephone support service to address technology emergencies at any time."
+    }
+};
+
+// Aggiungi un gestore di eventi per il cambio di lingua
+document.getElementById("it-language").addEventListener("click", () => changeLanguage("it"));
+document.getElementById("en-language").addEventListener("click", () => changeLanguage("en"));
+
+// Funzione per cambiare la lingua
+function changeLanguage(language) {
+    document.getElementById("chiSiamoItaliano").textContent = traduzione[language].chiSiamoItaliano;
+    document.getElementById("contenuto").innerHTML = traduzione[language].contenuto;
+    document.getElementById("serviziItaliano").textContent = traduzione[language].serviziItaliano;
+    document.getElementById("contenutoServizi").innerHTML = traduzione[language].contenutoServizi;
+}
+    </script>
+</body>
+</html>

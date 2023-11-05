@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta neame=" description" content="Il nostro sito parla gestione clientela ambito Tech">
+    <meta name="keywords" content="computer, informatica, software, programmazione, java, html">
+    <meta name="autor" content="Gruppo di lavoro 2">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="it">
+    <meta name="generator" content="Visual Studio Code">
+    <title>Richieste</title>
+    <link rel="stylesheet" href="./style2.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark expand-lg">
+            <div class="container-fluid">
+            <p id="logo"><img src="./imgs/logo.png" alt="logo" style="width: 100px; height: 60px;"></p>
+              <a class="navbar-brand" href="index.html">Riparatech</a>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" id="it-language">IT</a></li>
+                  <li><a class="dropdown-item" href="#" id="en-language">EN</a></li>
+                </ul>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Login</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="utente.html">Login Utente</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="accessoAmministratore.html">Login Amministratore</a>
+                    </li>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main id="main-richieste" class="traduzione">
+        
+            <label id="testo1" for="fileInput">Recupera la richiesta</label>
+            <input type="file" id="file-input" accept=".txt">
+        <div id="box">   
+        <div class="boxtabella">    
+            <table  id="myTable" class="table">
+            <thead>
+                    <th id="th1">Cliente</th>
+                    <th id="th2">Indirizzo</th>
+                    <th id="th3">Contatti</th>
+                    <th id="th4">Prodotto</th>
+                    <th id="th5">N° serie</th>
+                    <th id="th6">Problema</th>
+                    <th id="th7">Data</th>
+                    
+                    
+                </thead>
+                <tbody>
+                    <tr id="row1">
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            <div class="boxstato">
+                <select name="stato" id="stato">
+                    <option id="st1" value="PRESA IN CARICO">PRESA IN CARICO</option>
+                    <option id="st2" value="IN RIPARAZIONE">IN RIPARAZIONE</option>
+                    <option id="st3" value="RIPARATO">RIPARATO</option>
+                </select>
+            
+                <button type="button" class="btn btn-primary" id="salvaDati">SALVA</button>
+            </div>
+        </div>
+        <script>
+            fileInput = document.getElementById("file-input");
+var richiesta = [];
+
+
+fileInput.addEventListener('change', function () {
+    var file = fileInput.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        var values = e.target.result;
+        var valuesArray = values.split(";");
+        var row = document.getElementById("row1");
+
+        // Rimuovi le celle esistenti, se presenti
+        while (row.firstChild) {
+            row.removeChild(row.firstChild);
+        }
+
+        // Popola le celle una accanto all'altra
+        for (var i = 0; i < valuesArray.length; i++) {
+            var cell = document.createElement('td');
+            cell.textContent = valuesArray[i];
+            row.appendChild(cell);
+
+        }
+        richiesta.push(values);
+        
+    };
+    
+
+    reader.readAsText(file);
+    
+    
+});
+
+
+
+var salvaDati = document.getElementById("salvaDati");
+var statoInput = document.getElementById("stato");
+
+
+salvaDati.addEventListener('click', function() {
+    var statoRichiesta = richiesta[0] + "; " + "\n" + statoInput.value;
+
+    const textToSave = statoRichiesta;
+    const blob = new Blob([textToSave], {type: 'text'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = "stato_richiesta.txt";
+    a.click();
+
+});
+
+const traduzione = {
+    it: {
+        testo1: "Recupera la richiesta",
+        th1: "Cliente",
+        th2: "Indirizzo",
+        th3: "Contatti",
+        th4: "Prodotto",
+        th5: "N° serie",
+        th6: "Problema",
+        th7: "Data",
+        st1: "PRESA IN CARICO",
+        st2: "IN RIPARAZIONE",
+        st3: "RIPARATO",
+        salvaDati: "SALVA",
+        creat: "creatori",
+        contat: "Contatti",
+        cel:"Cellulare: 333 333 3333"
+    },
+    en: {
+        testo1: "Retrieve the request",
+        th1: "Customer",
+        th2: "Address",
+        th3: "Contacts",
+        th4: "Product",
+        th5: "Series N°",
+        th6: "Problem",
+        th7: "Date",
+        st1: "TAKING CHARGE",
+        st2: "UNDER REPAIR",
+        st3: "REPAIRED",
+        salvaDati: "SAVE",
+        creat: "creators",
+        contat: "Contacts",
+        cel:"Mobile: 333 333 3333"
+    }
+};
+
+// Aggiungi un gestore di eventi per il cambio di lingua
+document.getElementById("it-language").addEventListener("click", () => changeLanguage("it"));
+document.getElementById("en-language").addEventListener("click", () => changeLanguage("en"));
+
+// Funzione per cambiare la lingua
+function changeLanguage(language) {
+    document.getElementById("testo1").textContent = traduzione[language].testo1;
+    document.getElementById("th1").textContent = traduzione[language].th1;
+    document.getElementById("th2").textContent = traduzione[language].th2;
+    document.getElementById("th3").textContent = traduzione[language].th3;
+    document.getElementById("th4").placeholder = traduzione[language].th4;
+    document.getElementById("th5").placeholder = traduzione[language].th5;
+    document.getElementById("th6").placeholder = traduzione[language].th6;
+    document.getElementById("th7").textContent = traduzione[language].th7;
+    document.getElementById("st1").textContent = traduzione[language].st1;
+    document.getElementById("st2").placeholder = traduzione[language].st2;
+    document.getElementById("st3").textContent = traduzione[language].st3;
+    document.getElementById("salvaDati").textContent = traduzione[language].salvaDati;
+    document.getElementById("creat").textContent = traduzione[language].creat;
+    document.getElementById("contat").textContent = traduzione[language].contat;
+    document.getElementById("cel").textContent = traduzione[language].cel;
+
+}
+        </script>
+    </main>
+
+    <footer class="text-center text-center text-white bg-dark" >
+        <div class="container p-4 pb-0">
+            <section class="">
+                <div class="row">
+                    <hr class="w-100 clearfix d-md-none" />
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 id="creat" class="text-uppercase mb-4 font-weight-bold">creatori</h6>
+                        <p>
+                            <a class="text-white">Selena Stella</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Emanuele Gigliotti</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Maria Maddaluno</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Asad Mustafa</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 id="contat" class="text-uppercase mb-4 font-weight-bold">Contatti</h6>
+                        <p><i class="fas fa-home mr-3"></i> Centro Direzionale (Na)</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@riparatech.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> Tel. 081 569 0000 </p>
+                        <p id="cel"><i class="fas fa-print mr-3"></i> Cellulare: 333 333 3333</p>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-3">
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <div class="p-3">
+                            © 2020 Copyright:
+                            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

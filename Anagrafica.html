@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta neame=" description" content="Il nostro sito parla gestione clientela ambito Tech">
+    <meta name="keywords" content="computer, informatica, software, programmazione, java, html">
+    <meta name="autor" content="Gruppo di lavoro 2">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="it">
+    <meta name="generator" content="Visual Studio Code">
+    <title>Anagrafica</title>
+    <link rel="stylesheet" href="./style2.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark expand-lg">
+            <div class="container-fluid">
+            <p id="logo"><img src="./imgs/logo.png" alt="logo" style="width: 100px; height: 60px;"></p>
+              <a class="navbar-brand" href="index.html">Riparatech</a>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" id="it-language">IT</a></li>
+                  <li><a class="dropdown-item" href="#" id="en-language">EN</a></li>
+                </ul>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Login</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="utente.html">Login Utente</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="accessoAmministratore.html">Login Amministratore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ricerca.html">Ricerca</a>
+                      </li>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="container mt-4">
+            <div class="traduzione">
+            
+                <form class="boxform">
+                    <h2 id="t1">DATI ANAGRAFICI</h2><br>
+                    <div class="form-group">
+                        <label id="lnome" for="nome">Nome: </label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label id="lcognome" for="cognome">Cognome:</label>
+                        <input type="text" class="form-control" id="cognome" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label id="indirizzo" for="via">Indirizzo: </label>
+                        <input type="text" class="form-control" id="via" placeholder="Via e numero civico" required><br>
+                        <input type="text" class="form-control" id="cap" maxlength="5" placeholder="CAP" required><br>
+                        <input type="text" class="form-control" id="citta" placeholder="Città" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label id="ltel" for="telefono">Telefono: </label>
+                        <input type="text" class="form-control" id="telefono" maxlength="13" placeholder="Esempio: +39 3475188623" required>
+                    </div><br>
+                    <hr>
+                    <h2 id="t2">RIPARAZIONE DA EFFETTUARE</h2><br>
+                    <div class="form-group">
+                        <label id="lprodotto" for="prodotto">Descrizione prodotto: </label>
+                        <input type="text" class="form-control" id="prodotto" placeholder="Inserisci descrizione del prodotto con marca e modello" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label id="lnumeroserie" for="numeroserie">Inseisci il numero di serie: </label>
+                        <input type="text" class="form-control" id="numeroserie" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label id="lproblema" for="problema">Descrivi il problema: </label>
+                        <textarea name="problema" class="form-control" id="problema" cols="30" rows="5" required></textarea>
+                    </div><br>
+                    <div class="form-group">
+                        <label id="ldata" for="data">Data richiesta: </label>
+                        <input type="date" class="form-control" id="data" required>
+                    </div><br><br>
+                    <button type="button" class="btn btn-primary" id="inviaDati">Invia richiesta</button>
+                    <script src="script\anagrafica1.js"></script>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <script src="script\anagrafica2.js"></script>
+    </main>
+    <footer class="text-center text-center text-white bg-dark" >
+        <div class="container p-4 pb-0">
+            <section class="">
+                <div class="row">
+                    <hr class="w-100 clearfix d-md-none" />
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 id="creat" class="text-uppercase mb-4 font-weight-bold">creatori</h6>
+                        <p>
+                            <a class="text-white">Selena Stella</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Emanuele Gigliotti</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Maria Maddaluno</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Asad Mustafa</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 id="contat" class="text-uppercase mb-4 font-weight-bold">Contatti</h6>
+                        <p><i class="fas fa-home mr-3"></i> Centro Direzionale (Na)</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@riparatech.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> Tel. 081 569 0000 </p>
+                        <p id="cel"><i class="fas fa-print mr-3"></i> Cellulare: 333 333 3333</p>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-3">
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <div class="p-3">
+                            © 2020 Copyright:
+                            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

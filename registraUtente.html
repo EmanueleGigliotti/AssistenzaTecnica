@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Registrati</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+#password{
+  float: left;
+}
+</style>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark expand-lg">
+        <div class="container-fluid">
+        <p id="logo"><img src="./imgs/logo.png" alt="logo" style="width: 100px; height: auto;"></p>
+          <a class="navbar-brand" href="index.html">Riparatech</a>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lingua
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" id="it-language">IT</a></li>
+              <li><a class="dropdown-item" href="#" id="en-language">EN</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+<body>
+    <section class="gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px; border-color: gray;">
+                <div class="card-body p-4 p-md-5">
+                    <div id="traduzione">
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" id="titolo">Registrati</h3></div>
+                  <form>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        
+                    <div id="traduzione">
+                        <div class="form-outline">
+                          <input type="text" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="firstName" id="nome">Nome</label>
+                        </div>
+                    </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4">
+      
+                        <div class="form-outline">
+                          <input type="text" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="cognome" id="cognome">Cognome</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4 d-flex align-items-center">
+      
+                        <div class="form-outline datepicker w-100">
+                          <input type="date" class="form-control form-control-lg" id="birthdayDate" required />
+                          <label for="birthdayDate" class="form-label" id="nascita">Data di nascita</label>
+                        </div>
+      
+                      </div>
+                      <div class="col-md-6 mb-4">
+      
+                        <h6 class="mb-2 pb-1" id="sesso">Sesso: </h6>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                            value="option1" checked />
+                          <label class="form-check-label" for="femaleGender" id="uomo">Uomo</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                            value="option2" />
+                          <label class="form-check-label" for="maleGender" id="donna">Donna</label>
+                        </div>
+      
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                            value="option3" />
+                          <label class="form-check-label" for="otherGender" id="altro">Altro</label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="email" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="emailAddress" id="Email">Email</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="number" id="phoneNumber" class="form-control form-control-lg" required />
+                          <label class="form-label" for="phoneNumber">Numero di telefono</label>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+                        <div class="form-outline">
+                          <div class="form-outline">
+                            <input type="password" id="password" class="form-control form-control-lg" required />
+                            <label class="form-label" for="password">Password</label>
+                        </div> 
+                        </div>                
+                      </div>
+                    </div>
+                    <div class="mt-0 text-center"> 
+                      <input class="btn btn-primary btn-lg" type="submit" value="Invio" id="invio"/>
+                      <p id="output"></p>
+                    </div>
+                    <div class="mt-3 text-center">
+                      <p><a href="utente.html">Torna al login</a></p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      </section>
+
+      <script>
+
+        const traduzione = {
+      it: {
+          titolo:"Registrati",
+          nome:"Nome",
+          cognome:"Cognome",
+          nascita:"Data di nascita",
+          sesso:"Sesso",
+          uomo:"Uomo",
+          donna:"Donna",
+          altro:"Altro",
+          numero:"Numero di telefono",
+          invio:"Invio"
+      },
+      en: {
+          titolo:"Registration Form",
+          nome:"First Name",
+          cognome:"Last Name",
+          nascita:"Birthay",
+          sesso:"Sex",
+          uomo:"Man",
+          donna:"Woman",
+          altro:"Other",
+          numero:"Phone Number",
+          invio:"Submit"
+      }
+  };
+
+  document.getElementById("it-language").addEventListener("click", () => changeLanguage("it"));
+  document.getElementById("en-language").addEventListener("click", () => changeLanguage("en"));
+  
+  function changeLanguage(language) {
+
+      document.getElementById("titolo").textContent = traduzione[language].titolo;
+      document.getElementById("nome").textContent = traduzione[language].nome;
+      document.getElementById("cognome").textContent = traduzione[language].cognome;
+      document.getElementById("nascita").textContent = traduzione[language].nascita;
+      document.getElementById("sesso").textContent = traduzione[language].sesso;
+      document.getElementById("uomo").textContent = traduzione[language].uomo;
+      document.getElementById("donna").textContent = traduzione[language].donna;
+      document.getElementById("altro").textContent = traduzione[language].altro;
+      document.getElementById("numero").textContent = traduzione[language].numero;
+      document.getElementById("password").value=traduzione[language].password;
+      document.getElementById("invio").value = traduzione[language].invio;
+  }
+
+  document.getElementById("invio").addEventListener("click", function() {
+  const userData = {
+    email: document.getElementById("Email").value,
+    password: document.getElementById("password").value,
+  };
+
+  // Invia i dati dell'utente al server
+  fetch('/registrazione', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  })
+  .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Registrazione avvenuta con successo.');
+            } else {
+                alert('Errore nella registrazione.');
+            }
+        })
+        .catch(error => {
+            console.error('Errore nella registrazione:', error);
+        });
+});
+
+      </script>
+</body>
+
+</html>

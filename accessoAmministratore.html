@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA ACCESSO AREA RISERVATA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta neame=" description" content="Il nostro sito parla gestione clientela ambito Tech">
+    <meta name="keywords" content="computer, informatica, software, programmazione, java, html">
+    <meta name="autor" content="Gruppo di lavoro 2">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="it">
+    <meta name="generator" content="Visual Studio Code">
+    <style>
+         .newsletter{
+            background-color:#fff;
+            padding: 20px;
+            margin: 20px;
+            margin-bottom:10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #333;
+        }
+        .newsletter h2{
+            text-align: center;
+        }
+
+        .newsletter form{
+            display: table;
+            margin: 0 auto;
+        }
+
+        .newsletter label,
+        .newsletter input{
+            display: table-row;
+            padding: 10px;
+        }
+    </style>
+</head>
+<header>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+        <p id="logo"><img src="./imgs/logo.png" alt="logo" style="width: 100px; height: 60px;"></p>
+          <a class="navbar-brand" href="#">Riparatech</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Login</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">richieste assistenza</a>
+                </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="newsletter">
+        <h2>INSERISCI I TUOI DATI</h2>
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email"id="email" placeholder="Enter Email" name="email" required>
+                </tr>
+                <tr>
+                    <td><label for="psw"><b>Password</b></label>
+                        <input type="password" id="password" placeholder="Enter Password" name="psw" required></td>
+                </tr>
+                <tr>
+                    <td><label>
+                        <input type="checkbox"id="ricordami"checked="checked" name="remember" style="margin-bottom:15px">RICORDA DATI
+                      </label></td>
+                </tr>
+            </table>
+            <td><button type="button" class="signup"onclick="accedi()">ACCEDI</button></td>
+        </form>
+    </div>
+    <footer class="text-center text-center text-white bg-dark" >
+        <div class="container p-4 pb-0">
+            <section class="">
+                <div class="row">
+                    <hr class="w-100 clearfix d-md-none" />
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">creatori</h6>
+                        <p>
+                            <a class="text-white">Selena Stella</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Emanuele Gigliotti</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Maria Maddaluno</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Asad Mustafa</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Gianluca Radesca</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contatti</h6>
+                        <p><i class="fas fa-home mr-3"></i> Centro Direzionale (Na)</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@riparatech.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> Tel. 081 569 0000 </p>
+                        <p><i class="fas fa-print mr-3"></i> Cellulare: 333 333 3333</p>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-3">
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <div class="p-3">
+                            Â© 2020 Copyright:
+                            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+     </div>
+     <script>
+        function accedi(){
+        var passwod=document.getElementById("password").value; 
+        var email=document.getElementById("email").value;
+        var emailAccesso="email";
+        var passWordAccesso="password";
+        if(passwod===passWordAccesso&&email==emailAccesso)//password per accesso
+     { 
+       alert("accesso eseguito con successo");
+       window.location.href = 'pagAccessoAmministrativo.html';
+       document.getElementById("email").value = "";
+       document.getElementById("password").value = "";
+       
+     }
+     else
+     {
+       alert("password o email non corretta");
+       document.getElementById("email").value = "";
+       document.getElementById("password").value = "";
+       document.getElementById("secPassword").value = "";
+     }
+        }//funzione
+    
+    
+       </script>
+</body>
+</html>

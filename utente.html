@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <title>Login utente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<header>
+  <nav class="navbar navbar-dark bg-dark expand-lg">
+      <div class="container-fluid">
+      <p id="logo"><img src="./imgs/logo.png" alt="logo" style="width: 100px; height: auto;"></p>
+        <a class="navbar-brand" href="index.html">Riparatech</a>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Lingua
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" id="it-language">IT</a></li>
+            <li><a class="dropdown-item" href="#" id="en-language">EN</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+<body>
+	<div class="container-fluid">
+		<div class="row main-content bg-success text-center">
+			<div class="col-md-4 text-center company__info">
+				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+        <div id="nomeLogin">RiparaTech</div>
+      </div>
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+				<div class="container-fluid">
+					<div class="row">
+            <div id="traduzione">
+						<h2 id="titolo">Accedi</h2>
+            </div>
+					</div>
+					<div class="row">
+						<form control="" class="form-group">
+							<div class="row">
+								<input type="text" name="email" id="Email" class="form__input" placeholder="Email">
+							</div>
+							<div class="row">
+								<input type="password" name="password" id="password" class="form__input" placeholder="Password">
+							</div>
+							<div class="row">
+								<input type="checkbox" name="remember_me" id="remember_me" class="">
+								<label for="remember_me">Ricordami</label>
+							</div>
+							<div class="row" style="display: flex; justify-content: center;">
+								<input type="submit" value="Invio" class="btn" style="display: flex; justify-content: center;" id="invio">
+							</div>
+						</form>
+					</div>
+					<div class="row">
+            <div id="traduzione">
+						<p id="loginAccesso">Non hai un account?</p> <a href="registraUtente.html"><p id="registrati">Registrati qui</p></a>
+            </div>
+          </div>
+				</div>
+			</div>
+    </div>
+    </div>
+    <script>
+
+      const traduzione = {
+    it: {
+        titolo:"Accedi",
+        loginAccesso:"Non hai un account?",
+        registrati:"Registrati qui",
+        remember_me:"Ricordami",
+        nome_utente:"Nome Utente"
+    },
+    en: {
+        titolo:"Login",
+        loginAccesso:"Do not have an account?",
+        registrati:"Register here",
+        remember_me:"Remember me",
+        nome_utente:"Username"
+    }
+};
+
+// Aggiungi un gestore di eventi per il cambio di lingua
+document.getElementById("it-language").addEventListener("click", () => changeLanguage("it"));
+document.getElementById("en-language").addEventListener("click", () => changeLanguage("en"));
+
+// Funzione per cambiare la lingua
+function changeLanguage(language) {
+    document.getElementById("loginAccesso").textContent = traduzione[language].loginAccesso;
+    document.getElementById("titolo").textContent = traduzione[language].titolo;
+    document.getElementById("registrati").textContent = traduzione[language].registrati;
+    document.getElementById("remember_me").nextElementSibling.textContent = traduzione[language].remember_me;
+    document.getElementById("nome_utente").placeholder = traduzione[language].nome_utente;
+
+}
+  document.querySelector("form").addEventListener("submit", function(event){
+  event.preventDefault(); // Impedisci il comportamento predefinito del modulo
+
+  // Leggi il file di testo
+  var percorso ="login.txt";
+  fetch(percorso)
+    .then(response => response.text())
+    .then(data => {
+      const emailInput = document.getElementById("Email").value;
+      const passwordInput = document.getElementById("password").value;
+
+      const lines = data.split('\n');
+      var loginSuccessful = false;
+
+      // Cerca le credenziali nell'elenco delle righe
+      for (var line of lines) {
+        const [Email, password] = line.split(':');
+        if (data.includes(emailInput) && data.includes(passwordInput)) {
+          loginSuccessful = true;
+          break;
+        }
+      }
+      
+      const url="Anagrafica.html"
+      if (loginSuccessful) {
+        alert("Accesso riuscito");
+        window.location.href=url;
+
+      } else {
+        alert("Accesso fallito");
+      }
+    })
+    .catch(error => {
+      console.error("Errore durante il recupero del file di testo:", error);
+    });
+});
+
+    </script>
+    <footer class="text-center text-center text-white bg-dark" >
+      <div class="container p-4 pb-0">
+          <section class="">
+              <div class="row">
+                  <hr class="w-100 clearfix d-md-none" />
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h6 id="creat" class="text-uppercase mb-4 font-weight-bold">creatori</h6>
+                      <p>
+                          <a class="text-white">Selena Stella</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Emanuele Gigliotti</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Maria Maddaluno</a>
+                      </p>
+                      <p>
+                          <a class="text-white">Asad Mustafa</a>
+                      </p>
+                  </div>
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h6 id="contat" class="text-uppercase mb-4 font-weight-bold">Contatti</h6>
+                      <p><i class="fas fa-home mr-3"></i> Centro Direzionale (Na)</p>
+                      <p><i class="fas fa-envelope mr-3"></i> info@riparatech.com</p>
+                      <p><i class="fas fa-phone mr-3"></i> Tel. 081 569 0000 </p>
+                      <p id="cel"><i class="fas fa-print mr-3"></i> Cellulare: 333 333 3333</p>
+                  </div>
+              </div>
+          </section>
+          <hr class="my-3">
+          <section class="p-3 pt-0">
+              <div class="row d-flex align-items-center">
+                  <div class="col-md-7 col-lg-8 text-center text-md-start">
+                      <div class="p-3">
+                          © 2020 Copyright:
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </footer>
+</body>
+</html>
