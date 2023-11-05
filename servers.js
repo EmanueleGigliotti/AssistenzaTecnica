@@ -11,6 +11,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'Assistenza Tecnica')));
 
+// Rotta principale per servire index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Assistenza Tecnica', 'index.html'));
+  });
+
 // Rotta per la registrazione dell'utente
 app.post('/registrazione', (req, res) => {
   const userData = req.body; // Dati inviati dal client durante la registrazione
